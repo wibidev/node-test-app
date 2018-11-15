@@ -1,6 +1,6 @@
 # node-test-app
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+A quick Node.js test using [Express 4](http://expressjs.com/).
 
 ## Running Locally
 
@@ -11,3 +11,107 @@ git clone git@github.com:wibidev/node-test-app.git # or clone your own fork
 cd node-test-app
 npm install
 npm start
+```
+
+## Instructions
+
+ This small RESTful API will make requests to an external web service: https://shibe.online/
+
+You have to build several endpoints that returns JSON:
+
+### GET /animals/shibes
+Will fetch shibes
+
+### GET /animals/cats
+Will fetch cats
+
+### GET /animals/birds
+Will fetch birds
+
+### GET /animals/all
+Will make asynchronous requests to fetch cats birds & shibes.
+
+| Querystring parameter     |     Description       |     Required      | Default value  | Validations |
+| ------------- |------------- |-------------| -----| -----|
+| protocol  | Get https or http urls     | yes | none |Can only accept http or https |
+| count   | Number of entries per animal type to return    | no      | 1  | Must be a number, min 1, max 30 |
+| url | Get full URL or image ID   |   no      | true  |  true/false|
+
+### Possible JSON outputs:
+
+#### Success
+```javascript
+{
+  type: 'success',
+  code: 200,
+  total: 3,
+  data: {
+    // GET /animals/shibes
+    shibes: [
+      { 
+        // if url = false
+        id: '404ae6ed024aa5f1b9001fd755abdebe87886a0e',
+        // if url = true
+        url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
+      }
+    ],
+    // GET /animals/shibes
+    cats: [
+      { 
+        // if url = false
+        id: '404ae6ed024aa5f1b9001fd755abdebe87886a0e',
+        // if url = true
+        url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
+      }
+    ],
+    // GET /animals/shibes
+    birds: [
+      { 
+        // if url = false
+        id: '404ae6ed024aa5f1b9001fd755abdebe87886a0e',
+        // if url = true
+        url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
+      }
+    ],
+    // GET /animals/all
+    animals: [
+      { 
+        type: 'shibe', 
+        // if url = false
+        id: '404ae6ed024aa5f1b9001fd755abdebe87886a0e', 
+        // if url = true
+        url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
+      }
+    ]
+  }
+}
+
+```
+
+#### Bad request
+
+```
+{
+  type: 'badRequest',
+  code: 400,
+  errors: [
+    { 
+      param: 'protocol',
+      message: ERROR_MESSAGE
+    },
+    { 
+      param: 'count',
+      message: ERROR_MESSAGE
+    },
+    { 
+      param: 'url',
+      message: ERROR_MESSAGE
+    }
+  ]
+}
+
+```
+
+### Bonus:
+
+Make a middleware that catch and log errors
