@@ -44,7 +44,7 @@ Will make asynchronous requests to fetch cats birds & shibes.
 {
   type: 'success',
   code: 200,
-  total: 3,
+  total: 1,
   data: {
     // GET /animals/shibes
     shibes: [
