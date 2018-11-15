@@ -20,13 +20,13 @@ You have to build several endpoints that returns JSON.
 Feel free to organize your files like it is a real API (think scalability).
 
 ### GET /animals/shibes
-Will make a synchronous request to fetch shibes from the API.
+Will make a synchronous request to fetch shibes from the external API.
 
 ### GET /animals/cats
-Will make a synchronous request to fetch cats from the API.
+Will make a synchronous request to fetch cats from the external API.
 
 ### GET /animals/birds
-Will make a synchronous request to fetch birds from the API.
+Will make a synchronous request to fetch birds from the external API.
 
 ### GET /animals/all
 Will make asynchronous requests to fetch cats birds & shibes.
