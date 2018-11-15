@@ -15,18 +15,18 @@ npm start
 
 ## Instructions
 
- This small RESTful API will make requests to an external web service: https://shibe.online/
-
-You have to build several endpoints that returns JSON:
+This small RESTful API will make requests to an external web service: https://shibe.online/.
+You have to build several endpoints that returns JSON.
+Feel free to organize your files like it is a real API (think scalability).
 
 ### GET /animals/shibes
-Will fetch shibes
+Will make synchronous request to fetch shibes from the API.
 
 ### GET /animals/cats
-Will fetch cats
+Will make synchronous request to fetch cats from the API.
 
 ### GET /animals/birds
-Will fetch birds
+Will make synchronous request to fetch birds from the API.
 
 ### GET /animals/all
 Will make asynchronous requests to fetch cats birds & shibes.
