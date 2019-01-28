@@ -19,16 +19,16 @@ This small RESTful API will make requests to an external web service: https://sh
 You have to build several endpoints that returns JSON.
 Feel free to organize your files like it is a real API (think scalability).
 
-### GET /animals/shibes
+### GET /shibes
 Will make a synchronous request to fetch shibes from the external API.
 
-### GET /animals/cats
+### GET /cats
 Will make a synchronous request to fetch cats from the external API.
 
-### GET /animals/birds
+### GET /birds
 Will make a synchronous request to fetch birds from the external API.
 
-### GET /animals/all
+### GET /animals
 Will make asynchronous requests to fetch cats birds & shibes.
 
 | Querystring parameter     |     Description       |     Required      | Default value  | Validations |
@@ -46,7 +46,7 @@ Will make asynchronous requests to fetch cats birds & shibes.
   code: 200,
   total: 1,
   data: {
-    // GET /animals/shibes
+    // GET shibes
     shibes: [
       { 
         // if url = false
@@ -55,7 +55,7 @@ Will make asynchronous requests to fetch cats birds & shibes.
         url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
       }
     ],
-    // GET /animals/shibes
+    // GET /cats
     cats: [
       { 
         // if url = false
@@ -64,7 +64,7 @@ Will make asynchronous requests to fetch cats birds & shibes.
         url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
       }
     ],
-    // GET /animals/shibes
+    // GET /birds
     birds: [
       { 
         // if url = false
@@ -73,7 +73,7 @@ Will make asynchronous requests to fetch cats birds & shibes.
         url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
       }
     ],
-    // GET /animals/all
+    // GET /animals
     animals: [
       { 
         type: 'shibe', 
