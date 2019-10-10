@@ -19,17 +19,19 @@ This small RESTful API will make requests to an external web service: https://sh
 You have to build several endpoints that returns JSON.
 Feel free to organize your files like it is a real API (think scalability).
 
-### GET /shibes
-Will make a synchronous request to fetch shibes from the external API.
+You will implement a simple UI in React/Redux which allows us to visually browse API data.
 
-### GET /cats
-Will make a synchronous request to fetch cats from the external API.
+### GET /shibes - Page "Shibes list"
+Will make a request to fetch shibes from the external API.
 
-### GET /birds
-Will make a synchronous request to fetch birds from the external API.
+### GET /cats - Page "Cats list"
+Will make a request to fetch cats from the external API.
 
-### GET /animals
-Will make asynchronous requests to fetch cats birds & shibes.
+### GET /birds - Page "Birds list"
+Will make a request to fetch birds from the external API.
+
+### GET /animals - Page "Animals list"
+Lists all type of animals
 
 | Querystring parameter     |     Description       |     Required      | Default value  | Validations |
 | ------------- |------------- |-------------| -----| -----|
@@ -59,28 +61,18 @@ Will make asynchronous requests to fetch cats birds & shibes.
     cats: [
       { 
         // if url = false
-        id: '404ae6ed024aa5f1b9001fd755abdebe87886a0e',
+        id: '29dde01e04e1a3cf9e3aba4069cbb823fc2b4dbf',
         // if url = true
-        url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
+        url: 'http://cdn.shibe.online/cats/a825445d7e3d8db2d619b97065a9c26600a7ab25.jpg' 
       }
     ],
     // GET /birds
     birds: [
       { 
         // if url = false
-        id: '404ae6ed024aa5f1b9001fd755abdebe87886a0e',
+        id: '1fba38e7a578b08895bb4d6fd39d7afff6d582c4',
         // if url = true
-        url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
-      }
-    ],
-    // GET /animals
-    animals: [
-      { 
-        type: 'shibe', 
-        // if url = false
-        id: '404ae6ed024aa5f1b9001fd755abdebe87886a0e', 
-        // if url = true
-        url: 'http://cdn.shibe.online/shibes/404ae6ed024aa5f1b9001fd755abdebe87886a0e.jpg' 
+        url: 'http://cdn.shibe.online/birds/9d94c4c89bf669bce30e9ee32c7448800f843e78.jpg' 
       }
     ]
   }
